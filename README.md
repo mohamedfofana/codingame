@@ -1,1 +1,1 @@
-Codingame result
+# Codingame result
