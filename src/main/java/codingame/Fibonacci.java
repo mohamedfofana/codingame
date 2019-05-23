@@ -2,44 +2,39 @@ package main.java.codingame;
 
 public class Fibonacci {
 
-	static int fibonacciRecursif(int n) {
-		if (n == 0)
-			return 0;
-		else if (n == 1)
-			return 1;
-		else {
+	public static int fibonacciRecursif(int n) {
+		if (n <= 1)
+			return n;
+		else
 			return fibonacciRecursif(n-1) + fibonacciRecursif(n-2);
-		}
 	}
 	
-	static int fibonacciMemoization(int n, int[] memo) {
-		if (n == 0)
-			return 0;
-		if (n == 1)
-			return 1;
+	public static int fibonacciMemoization(int n) {
+		return fibonacciRecursifMemoization(n, new int[n+1]);
+	}
+	
+	public static int fibonacciRecursifMemoization(int n, int[] memo) {
+		if (n <= 1)
+			return n;
 		if (memo[n]!=0)
 			return memo[n];
 		else {
-			memo[n] =fibonacciMemoization(n-1, memo) + fibonacciMemoization(n-2, memo);
+			memo[n] =fibonacciRecursifMemoization(n-1, memo) + fibonacciRecursifMemoization(n-2, memo);
 			return memo[n];
 		}
 	}
 	
-	static int fibonacciIteratif(int n) {
-		int fiboNmoinsNmoins2 = 0;
-		int fiboNmoinsNmoins1 = 1;
+	public static int fibonacciIteratif(int n) {
+		int oldFibo = 0;
+		int newFibo = 1;
+		if (n <= 1)
+			return n;
 		for (int i = 2; i<=n; i++) {
-			int oldFiboNmoinsNmoins1 = fiboNmoinsNmoins1;
-			fiboNmoinsNmoins1 = fiboNmoinsNmoins1 + fiboNmoinsNmoins2;
-			fiboNmoinsNmoins2 = oldFiboNmoinsNmoins1;
+			int tmpFibo = newFibo;
+			newFibo = newFibo + oldFibo;
+			oldFibo = tmpFibo;
 		}
-		return fiboNmoinsNmoins1;
+		return newFibo;
 	}
 	
-	public static void main(String[] args) {
-		System.out.println(fibonacciRecursif(10));
-		System.out.println(fibonacciIteratif(10));
-		int[] memo = new int[11];
-		System.out.println(fibonacciMemoization(10, memo));
-	}
 }

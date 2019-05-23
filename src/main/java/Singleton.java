@@ -2,7 +2,7 @@ package main.java;
 
 public class Singleton {
 	private Singleton() {
-		
+		// Implémentation
 	}
 	
 	private static class SingletonHolder{
@@ -17,6 +17,10 @@ public class Singleton {
 
 class SingletonDCL {
 	private static volatile SingletonDCL _instance = null;
+	
+	private SingletonDCL() {
+		// Implémentation
+	}
 	
 	public static SingletonDCL getInstance() {
 		if (_instance == null) {
