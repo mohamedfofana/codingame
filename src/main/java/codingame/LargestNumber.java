@@ -1,7 +1,7 @@
 package main.java.codingame;
 
 public class LargestNumber {
-	//	Énoncé
+	//	ï¿½noncï¿½
 	//	Algorithm.findLargest(int[] numbers) should return the largest number from numbers. The array numbers always contains at least
 	//	one number.
 	//	Implement Algorithm.findLargest(int[] numbers).
@@ -16,12 +16,29 @@ public class LargestNumber {
 		
 		return max;
 	}
-//	Résultat
-//	Fonctionne dans des cas simples : Succès
-//	Fonctionne quand le tableau contient seulement Integer.MIN_VALUE : Succès
-//	Fonctionne quand le plus grand élément est à la position 0 : Succès
-//	Fonctionne quand le plus grand élément est à la fin du tableau : Succès
-//	Lisibilité du code : 100%
+
+	// Method to find maximum in arr[]
+	static int largest(int[] arr)
+	{
+		int i;
+
+		// Initialize maximum element
+		int max = arr[0];
+
+		// Traverse array elements from second and
+		// compare every element with current max
+		for (i = 1; i < arr.length; i++)
+			if (arr[i] > max)
+				max = arr[i];
+
+		return max;
+	}
+//	Rï¿½sultat
+//	Fonctionne dans des cas simples : Succï¿½s
+//	Fonctionne quand le tableau contient seulement Integer.MIN_VALUE : Succï¿½s
+//	Fonctionne quand le plus grand ï¿½lï¿½ment est ï¿½ la position 0 : Succï¿½s
+//	Fonctionne quand le plus grand ï¿½lï¿½ment est ï¿½ la fin du tableau : Succï¿½s
+//	Lisibilitï¿½ du code : 100%
 
 	
 	public static void main(String[] args) {
