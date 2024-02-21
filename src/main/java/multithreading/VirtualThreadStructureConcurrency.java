@@ -3,7 +3,6 @@ package main.java.multithreading;
 import java.util.Queue;
 import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.StructuredTaskScope;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**

@@ -1,22 +1,36 @@
 package main.java.codingame.arbre;
 
+import java.util.List;
+
 public class Node {
 	
-	int value;
-	Node gauche, right;
+	public int value;
+	public int val;
+	public Node left;
+	public Node parent;
+	public List<Node> neighbors;
+	Node right;
 	
 	public Node(int v, Node left, Node right) {
-		this.gauche = left;
+		this.left = left;
 		this.right = right;
 		this.value = v;
 	}
 	
+	public Node(int val2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Node(int i, Object object, Node head, Object object2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Node getGauche() {
-		return gauche;
+		return left;
 	}
 
 	public void setLeft(Node left) {
-		this.gauche = left;
+		this.left = left;
 	}
 
 	public Node getDroite() {
